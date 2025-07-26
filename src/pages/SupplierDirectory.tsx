@@ -43,9 +43,8 @@ export const SupplierDirectory: React.FC<SupplierDirectoryProps> = ({ language, 
 
   const handleWhatsAppContact = (supplier: Supplier) => {
     const message = language === 'hi' 
-      ? `नमस्ते ${supplier.name}! मैं BazaarConnect के माध्यम से आपसे ${supplier.product} के बारे में पूछताछ कर रहा हूं।`
-      : `Hello ${supplier.name}! I'm inquiring about ${supplier.product} through BazaarConnect.`;
-    
+      ? `नमस्ते ${supplier.name}! मैं BazaarConnect के माध्यम से आपसे ${supplier.product_hi} के बारे में पूछताछ कर रहा हूं।`
+      : `Hello ${supplier.name}! I'm inquiring about ${supplier.product_en} through BazaarConnect.`;    
     openWhatsApp(supplier.phone, encodeURIComponent(message));
   };
 

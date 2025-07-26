@@ -12,6 +12,7 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 import { Language, VendorRequest, SupplierRegistration, Supplier } from './types';
 import { initialSuppliers } from './data/suppliers';
+import { ChatbotWidget } from './components/ChatbotWidget';
 
 function App() {
   const [language, setLanguage] = useState<Language>('hi');
@@ -26,9 +27,11 @@ function App() {
     const newSupplier: Supplier = {
       id: Date.now().toString(),
       name: supplierData.name,
-      product: supplierData.product,
+      product_hi: supplierData.product_hi,
+      product_en: supplierData.product_en,
       pricePerKg: parseInt(supplierData.pricePerKg),
-      location: supplierData.location,
+      location_hi: supplierData.location_hi,
+      location_en: supplierData.location_en,
       rating: 4.0, // Default rating for new suppliers
       distance: Math.random() * 3 + 0.5, // Random distance between 0.5-3.5 km
       phone: supplierData.phone,
@@ -93,6 +96,7 @@ function App() {
         </main>
         
         <Footer language={language} />
+        <ChatbotWidget />
       </div>
     </Router>
   );
