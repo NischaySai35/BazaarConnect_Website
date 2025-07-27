@@ -40,20 +40,23 @@ export const ChatbotWidget: React.FC = () => {
 
   return (
     <>
-      {/* Floating Button */}
-      <button
-        onClick={() => setOpen(true)}
-        className="fixed bottom-6 right-6 z-50 bg-orange-500 hover:bg-orange-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg"
-        aria-label="Open chatbot"
-      >
-        💬
-      </button>
+      {/* Improved Floating Button */}
+      {!open && (
+        <button
+          onClick={() => setOpen(true)}
+          className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-gradient-to-r from-orange-500 to-green-500 hover:from-orange-600 hover:to-green-600 text-white rounded-full px-5 py-3 shadow-xl transition-all duration-200 hover:scale-105"
+          aria-label="Open chatbot"
+        >
+          <span className="text-2xl">💬</span>
+          <span className="font-semibold text-base">Ask AI</span>
+        </button>
+      )}
       {/* Chat Window */}
       {open && (
         <div className="fixed bottom-24 right-6 z-50 w-80 bg-white rounded-xl shadow-2xl flex flex-col">
           <div className="flex justify-between items-center p-3 border-b">
             <span className="font-bold">BazaarConnect AI</span>
-            <button onClick={() => setOpen(false)} className="text-gray-400 hover:text-gray-700">&times;</button>
+            <button onClick={() => setOpen(false)} className="text-gray-400 hover:text-gray-700 text-2xl leading-none">&times;</button>
           </div>
           <div
             className="flex-1 p-3 overflow-y-auto"
