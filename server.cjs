@@ -1,4 +1,5 @@
-require('dotenv').config();
+require('dotenv').config({ debug: true });  // Add debug
+console.log("GEMINI API KEY:", process.env.GEMINI_API_KEY); // Debug print
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
