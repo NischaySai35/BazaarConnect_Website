@@ -49,5 +49,3 @@ Respond based on this context and the user's question.
     res.status(500).json({ reply: 'Error contacting Gemini API.' });
   }
 });
-
-app.listen(5000, () => console.log('Backend running on http://localhost:5000'));
