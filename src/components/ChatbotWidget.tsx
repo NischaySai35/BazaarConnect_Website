@@ -26,7 +26,7 @@ export const ChatbotWidget: React.FC = () => {
     setMessages(newMessages);
     setInput('');
     try {
-      const res = await fetch('https://bazaarconnect-api.onrender.com/api/gemini-chat', {
+      const res = await fetch('https://profound-surf-453018-q0.df.r.appspot.com/api/gemini-chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newMessages, context }),

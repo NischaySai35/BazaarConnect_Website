@@ -1,0 +1,12 @@
+runtime: nodejs20
+entrypoint: node server.cjs
+
+instance_class: F1  # lowest-cost
+
+env_variables:
+  NODE_ENV: 'production'
+  GEMINI_API_KEY: 'AIzaSyC-fYoAUInTWTdqddbpaAWGYSH2HA1CNtk'
+
+automatic_scaling:
+  min_instances: 0
+  max_instances: 1

@@ -20,5 +20,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "server.cjs"]
+  "include": ["src", "bazaar_backend/server.cjs"]
 }
