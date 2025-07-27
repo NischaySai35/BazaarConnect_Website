@@ -41,7 +41,15 @@ Respond based on this context and the user's question.
 
     const response = await axios.post(
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + GEMINI_API_KEY,
-      { contents }
+      {
+        contents,
+        generationConfig: {
+          temperature: 0.9,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 1024
+        }
+      }
     );
     const aiMessage = response.data.candidates?.[0]?.content?.parts?.[0]?.text || 'No response';
     res.json({ reply: aiMessage });
