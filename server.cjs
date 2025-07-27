@@ -1,5 +1,4 @@
-require('dotenv').config({ debug: true });  // Add debug
-console.log("GEMINI API KEY:", process.env.GEMINI_API_KEY); // Debug print
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -50,3 +49,6 @@ Respond based on this context and the user's question.
     res.status(500).json({ reply: 'Error contacting Gemini API.' });
   }
 });
+
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
