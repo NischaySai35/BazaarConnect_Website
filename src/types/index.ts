@@ -30,10 +30,10 @@ export interface VendorRequest {
 
 export interface SupplierRegistration {
   name: string;
-  product_hi: string;
+  product_hi?: string;
   product_en: string;
   pricePerKg: string;
-  location_hi: string;
+  location_hi?: string;
   location_en: string;
   phone: string;
 }

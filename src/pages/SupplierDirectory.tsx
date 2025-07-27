@@ -137,7 +137,9 @@ export const SupplierDirectory: React.FC<SupplierDirectoryProps> = ({ language, 
                   {/* Product */}
                   <div className="mb-4">
                     <p className="text-2xl font-bold text-orange-600 mb-1">
-                      {language === 'hi' ? supplier.product_hi : supplier.product_en}
+                      {(language === 'hi' ? supplier.product_hi : supplier.product_en) ||
+ supplier.product_en}
+
                     </p>
                     <p className="text-xl font-semibold text-gray-800">₹{supplier.pricePerKg} {t.perKg}</p>
                   </div>
@@ -151,12 +153,13 @@ export const SupplierDirectory: React.FC<SupplierDirectoryProps> = ({ language, 
                       </div>
                       <div className="flex items-center text-gray-600">
                         <MapPin className="w-4 h-4 mr-1" />
-                        <span className="text-sm">{supplier.distance} km</span>
+                        <span className="text-sm">{supplier.distance?.toFixed(1)} km</span>
                       </div>
                     </div>
                     <div className="text-sm text-gray-600">
                       <MapPin className="w-3 h-3 inline mr-1" />
-                      {language === 'hi' ? supplier.location_hi : supplier.location_en}
+                      {(language === 'hi' ? supplier.location_hi : supplier.location_en) ||
+ supplier.location_en}
                     </div>
                   </div>
 

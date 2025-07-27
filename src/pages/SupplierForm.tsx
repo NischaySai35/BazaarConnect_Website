@@ -14,9 +14,9 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({ language, onSupplier
   const t = translations[language];
   const [formData, setFormData] = useState<SupplierRegistration>({
     name: '',
-    product: '',
+    product_en: '',
     pricePerKg: '',
-    location: '',
+    location_en: '',
     phone: ''
   });
 
@@ -26,7 +26,7 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({ language, onSupplier
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.name && formData.product && formData.pricePerKg && formData.location && formData.phone) {
+    if (formData.name && formData.product_en && formData.pricePerKg && formData.location_en && formData.phone) {
       onSupplierSubmit(formData);
       navigate('/supplier-success');
     }
@@ -65,7 +65,7 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({ language, onSupplier
                 value={formData.name}
                 onChange={(e) => handleInputChange('name', e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
-                placeholder={language === 'hi' ? "व्यापार का नाम" : "Business name"}
+                placeholder={language === 'hi' ? "व्यापार का नाम(केवल अंग्रेज़ी)" : "Business name (English only)"}
                 required
               />
             </div>
@@ -78,10 +78,10 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({ language, onSupplier
               <input
                 type="text"
                 id="product"
-                value={formData.product}
-                onChange={(e) => handleInputChange('product', e.target.value)}
+                value={formData.product_en}
+                onChange={(e) => handleInputChange('product_en', e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
-                placeholder={language === 'hi' ? "जैसे: प्याज, टमाटर, आलू" : "e.g: Onions, Tomatoes, Potatoes"}
+                placeholder={language === 'hi' ? "जैसे: प्याज, टमाटर, आलू (केवल अंग्रेज़ी)" : "e.g: Onions, Tomatoes, Potatoes (English only)"}
                 required
               />
             </div>
@@ -110,8 +110,8 @@ export const SupplierForm: React.FC<SupplierFormProps> = ({ language, onSupplier
               <input
                 type="text"
                 id="location"
-                value={formData.location}
-                onChange={(e) => handleInputChange('location', e.target.value)}
+                value={formData.location_en}
+                onChange={(e) => handleInputChange('location_en', e.target.value)}
                 className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all duration-300"
                 placeholder={language === 'hi' ? "व्यापार का स्थान" : "Business location"}
                 required
