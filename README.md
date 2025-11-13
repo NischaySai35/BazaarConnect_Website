@@ -66,7 +66,7 @@ Integrated chat or inquiry system for fast negotiations.
 ### **1. Clone the Repository**
 
 ```bash
-git clone https://github.com/your-username/BazaarConnect.git
+git clone https://github.com/NischaySai35/BazaarConnect.git
 cd BazaarConnect
 ```
 
